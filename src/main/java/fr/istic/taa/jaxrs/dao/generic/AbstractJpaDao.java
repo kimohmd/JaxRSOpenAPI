@@ -8,17 +8,15 @@ import javax.persistence.EntityTransaction;
 
 public abstract class AbstractJpaDao<K, T extends Serializable> implements IGenericDao<K, T> {
 
-	private Class<T> clazz;
+	protected Class<T> clazz;
 
 	protected EntityManager entityManager;
 
-	public AbstractJpaDao() {
+	public AbstractJpaDao(Class<T> clazzToSet) {
 		this.entityManager = EntityManagerHelper.getEntityManager();
+		clazz = clazzToSet;
 	}
 
-	public void setClazz(Class<T> clazzToSet) {
-		this.clazz = clazzToSet;
-	}
 
 	public T findOne(K id) {
 		return entityManager.find(clazz, id);
