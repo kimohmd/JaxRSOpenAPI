@@ -23,6 +23,9 @@ utilisateur root, password 554446666
 
 créez une BDD nommée jaxrs
 
+### REMARQUE
+les deux conteneurs seront réutilisés lors du tp Spring Boot (ne les supprimez pas)!!
+
 ## Exécution
 placez-vous dans la racine du projet puis lancez les commandes
 ```
